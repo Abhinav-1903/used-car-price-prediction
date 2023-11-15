@@ -1,0 +1,5 @@
+Year,Kilometers_Driven,Owner_Type,Seats,Mileage(km/kg),Engine(CC),Power(bhp),Diesel,LPG,Petrol,Manual
+2010,72000,1,5,26.6,998,58.16,0,0,0,1
+2015,41000,1,5,19.67,1582,126.2,1,0,0,1
+2011,46000,1,5,18.2,1199,88.7,0,0,1,1
+2012,87000,1,7,20.77,1248,88.76,1,0,0,1
