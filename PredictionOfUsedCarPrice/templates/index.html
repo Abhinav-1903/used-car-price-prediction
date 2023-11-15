@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>🚗 🏎 Car Price Prediction 🚙 🚘</title>
+
+	<style>
+	input[type=text], select {
+		width: 80%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border-radius: 4px;
+		font-weight: bolder;
+	}
+
+	input[type=submit] {
+		width: 80%;
+		background-color: red;
+		opacity: 0.7;
+		color: black;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+		font-size: 100;
+		font-weight: bolder;
+	}
+
+	input[type=submit]:hover {
+		background-color: red;
+		opacity: 0.9;
+	}
+
+	form {
+		border-radius: 10px;
+		padding-top: 5%;
+		font-weight: bolder;
+	}
+
+	div {
+		border-radius: 5px;
+		margin-left: 35%;
+		width: 30%;
+	}
+
+	h1 {
+		color: color-blue;
+		font-size: 40px;
+		font-weight: bolder;
+	}
+
+	h3 {
+		color: white;
+		font-size: 40px;
+		border-radius: 10px;
+		font-weight: bolder;
+		padding: 14px 20px;
+	}
+
+	body {
+        background-image: url("static/images/11207.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		text-align: center;
+		padding: 0px;
+	}
+	</style>
+
+</head>
+
+<body>
+
+    <h1>🚗 🏎 Car Price Prediction 🚙 🚘</h1>
+
+	<div>
+
+		<form action="{{ url_for('predict')}}" method="post" style="background-color: #E6E6FA">
+
+			<label for="Year">Year of Purchase 💰</label><br>
+			<input type="text" id="Year" name="Year" placeholder="For example: 2014/2015...." required="required"><br>
+
+			<label for="Kms_Driven">Kilometers Driven 🚙</label><br>
+			<input type="text" id="Kms_Driven" name="Kms_Driven" placeholder="For example: 50000 (for 50000 kms)" required="required"><br>
+
+			<label for="Owner">No. of Owners 👨</label><br>
+			<select id="owner" name="Owner">
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="3">3</option>
+			</select><br>
+
+			<label for="Seats">No of Seats</label><br>
+			<input type="text" id="Seats" name="Seats" placeholder="For example: 6" required="required"><br>
+
+			<label for="Mileage">Mileage(km/kg)</label><br>
+			<input type="text" id="Mileage" name="Mileage" placeholder="For example: 19.67" required="required"><br>
+
+			<label for="ECC">Enginee CC</label><br>
+			<input type="text" id="ECC" name="ECC" placeholder="For example: 1582" required="required"><br>
+
+			<label for="BHP">Break Horse Power</label><br>
+			<input type="text" id="BHP" name="BHP" placeholder="For example: 58.16" required="required"><br>
+
+			<label for="Fuel_Type_Petrol">Fuel ⛽</label><br>
+			<select id="Fuel_Type_Petrol" name="Fuel_Type_Petrol" required="required">
+				<option value="Petrol">Petrol ⛽</option>
+				<option value="Diesel">Diesel ⛽</option>
+				<option value="Lpg">Lpg ⛽</option>
+			</select><br>
+
+			<label for="Transmission_Manual ">Transmission Type⚙️</label><br>
+			<select id="Transmission_Manual" name="Transmission_Manual" required="required">
+				<option value="manual car">Manual 🚗</option>
+				<option value="automatic car ">Automatic 🚙</option>
+			</select> <br>
+
+			<input type="submit" value="Predict Price">
+
+		</form>
+	</div>
+
+    <h3><font color="white">{{ prediction_text }}</font></h3>
+
+</body>
+</html>
